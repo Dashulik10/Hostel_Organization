@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <h2>Выберите вашу роль:</h2>
+        <form method="get" action="{% url 'users:role_register' %}">
+            {% csrf_token %}
+
+            <button type="submit" name="is_student" value="true">Студент</button>
+            <button type="submit" name="is_student" value="false">Рабочий</button>
+
+        </form>
+    </div>
+{% endblock content %}

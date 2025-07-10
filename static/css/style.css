@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: radial-gradient(circle, rgb(89, 32, 168) 0%, rgb(34, 35, 42) 100%);
+}
+
+.header {
+    background: linear-gradient(90deg,rgba(131, 58, 180, 1) 0%, rgba(233, 195, 250, 1) 91%, rgba(199, 195, 250, 1) 100%);
+    color: white;
+    padding: 10px 0;
+}
+
+.header .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header .logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-right: 40px;
+}
+
+
+.header .nav {
+    font-size: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.header .nav-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header .nav-link:hover {
+    color: #ffa500;
+}
+
+.auth {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.auth a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: background 0.3s;
+}
+
+.auth a:hover {
+    background-color: #A29AF6BA;
+    color: white;
+    border-radius: 5px;
+}
+
+.logout-button {
+    background-color: #5920a8;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 15px;
+    font-size: 14px;
+    transition: background 0.3s;
+    border: none;
+    border-radius: 5px;
+}
+
+.logout-button:hover {
+    background-color: rgba(162, 154, 246, 0.73);
+    color: white;
+}
+
+.button-auth, .button-register, .logout-button {
+    padding: 10px 15px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.button-auth {
+    background-color: white;
+    color: #5920a8;
+}
+
+.button-auth:hover {
+    background-color: #A29AF6BA;
+    color: white;
+}
+
+.button-register {
+    background-color: #5920a8;
+    color: white;
+}
+
+.button-register:hover {
+    background-color: rgba(203, 35, 246, 0.73);
+}
+
+.content-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #C7C3FA;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+}

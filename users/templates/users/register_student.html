@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Регистрация Студента</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if user.student.photo %}
+    <p><img src="{{ user.student.photo.url }}">
+    {% else %}
+    <p><img src="{{ default_image }}">
+    {% endif %}
+    <input type="hidden" name="next" value="{{ next }}" />
+    <div class="form-error">{{ form.non_field_errors }}</div>
+    {% for f in form %}
+    <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }}</p>
+    <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+    <p><button type="submit">Регистрация</button></p>
+</form>
+
+{% endblock %}

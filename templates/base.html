@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOSTEL</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <!-- Большая надпись HOSTEL -->
+            <a href="/" class="logo">HOSTEL</a>
+            
+            <!-- Меню (mainmenu) -->
+            <ul class="nav">
+                {% for m in mainmenu %}
+                    <li><a href="{% url m.url_name %}" class="nav-link">{{ m.title }}</a></li>
+                {% endfor %}
+            </ul>
+            
+            <!-- Авторизация и регистрация -->
+            <div class="auth">
+                {% if user.is_authenticated %}
+                    {% if user.student %}
+                        <a href="{% url 'users:student_profile' user.slug %}">{{ user.first_name }} {{ user.last_name }}</a> |
+                    {% else %}
+                        <a href="{% url 'users:worker_profile' user.slug %}">{{ user.first_name }} {{ user.last_name }}</a> |
+                    {% endif %}
+                    <form action="{% url 'users:logout' %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-button">Выйти</button>
+                    </form>
+                {% else %}
+                    <button class="button-auth" onclick="location.href='{% url 'users:login' %}';">Авторизация</button>
+                    <button class="button-register" onclick="location.href='{% url 'users:role_register' %}';">Регистрация</button>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    
+<div class="content-container">    
+{% block content %}
+
+{% endblock content %}
+</div>
+</body>
+</html>

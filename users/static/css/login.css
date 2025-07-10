@@ -1,0 +1,89 @@
+.auth-page body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #5920a8;
+}
+
+.auth-page form {
+    background: #C7C3FA;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.auth-page h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.auth-page label {
+    display: block;
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.auth-page input[type="text"],
+.auth-page input[type="password"],
+.auth-page input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #333333;
+    box-sizing: border-box;
+}
+
+.auth-page input[type="text"]:focus,
+.auth-page input[type="password"]:focus,
+.auth-page input[type="email"]:focus {
+    border-color: #5920a8;
+    outline: none;
+}
+
+.auth-page button[type="submit"] {
+    width: 100%;
+    background-color: #5920a8;
+    color: #ffffff;
+    padding: 12px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-page button[type="submit"]:hover {
+    background-color: #774fc2;
+}
+
+.auth-page .form-error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.auth-page a {
+    color: #5920a8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.auth-page a:hover {
+    text-decoration: underline;
+}
+

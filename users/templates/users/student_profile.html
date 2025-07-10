@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{{ user.student.get_absolute_url }}">Посмотреть профиль студента</a>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if user.student.photo %}
+    <p><img src="{{ user.student.photo.url }}" alt="Фотография профиля" />
+{% else %}
+    <p><img src="{{ default_image }}" alt="Изображение по умолчанию" />
+{% endif %}
+
+    <div class="form-error">{{ form.non_field_errors }}</div>
+    {% for f in form %}
+    <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+    <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+
+    <p><button type="submit">Сохранить</button></p>
+</form>
+
+<hr>
+<p><a href="{% url 'users:password_change' %}">Сменить пароль</a></p>
+
+{% endblock %}

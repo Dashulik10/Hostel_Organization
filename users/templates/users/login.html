@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="auth-page">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}" />
+        <div class="form-error">{{ form.non_field_errors }}</div>
+
+        <h1 class="h3 mb-3 fw-normal">Авторизация</h1>
+
+        <div class="form-floating">
+            {% for f in form %}
+                <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }}</p>
+                    <div class="form-error">{{ f.errors }}</div>
+            {% endfor %}
+        </div>
+
+        <button class="btn btn-primary w-100 py-2" type="submit">Войти</button>
+        <p><a href="{% url 'users:password_reset' %}">Забыли пароль?</a></p>
+    </form>
+</div>
+{% endblock content %}
