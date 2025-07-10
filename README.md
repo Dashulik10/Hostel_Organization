@@ -13,4 +13,4 @@
 - Django REST Framework
 
 ## Дополнительные
-- Poatman
+- Postman
